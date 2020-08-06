@@ -1,0 +1,25 @@
+\newpage
+\section{插入表格}
+
+可以借助第三方网站：\\
+\href{http://www.tablesgenerator.com/latex_tables}{可借助网站工具，点击此字即可}
+
+\begin{table}[!htbp]
+	\caption{Nitsche方法的离散误差和误差阶，$f(x,y)=3x-2x^3-2xy^2$。}%{Nitsche's method of discretization errors and error reduction for one-dimensional curve problem.}
+	\label{tab:quxianwuchabiaoge_Nitsche}
+	\centering
+	\footnotesize% fontsize
+	\setlength{\tabcolsep}{4pt}% column separation
+	\renewcommand{\arraystretch}{1.2}%row space 
+	\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		网格间距$h$  & $\left \| u^e-u_h \right \|_{L^2(\Gamma)}$ & 阶 & $\left \| u^e-u_h \right \|_{H^1(\Gamma)}$ & 阶 & $\left \| u^e-u_h \right \|_{L^{\infty}(\Gamma)}$ & 阶 \\ \hline
+		0.1      & 1.04E-3                                      &    -   & 3.35E-2                                      &    -   & 1.80E-3                                             &   -    \\ \hline
+		0.05     & 2.09E-4                                      & 2.31  & 1.51E-2                                      & 1.15  & 4.27E-4                                             & 2.08  \\ \hline
+		0.025    & 4.38E-5                                      & 2.26  & 6.96E-3                                      & 1.12  & 1.04E-4                                             & 2.04  \\ \hline
+		0.0125   & 1.32E-5                                      & 1.73  & 3.78E-3                                      & 0.88  & 2.81E-5                                             & 1.88  \\ \hline
+		0.00625  & 3.08E-6                                      & 2.10  & 1.84E-3                                      & 1.04  & 7.02E-6                                             & 2.00  \\ \hline
+		0.003125 & 7.27E-7                                      & 2.08  & 8.99E-4                                      & 1.03  & 1.74E-6                                             & 2.01  \\ \hline
+	\end{tabular}
+\end{table}
+

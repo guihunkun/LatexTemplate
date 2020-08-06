@@ -1,0 +1,111 @@
+%%利用XeLaTeX编译两次生成目录
+\documentclass{ctexart}%%中文文档类型
+\usepackage{amsmath,amsthm}%%美国数学会宏包
+\newtheorem{exer}{{定理}}%[section]%定义一个练习环境
+\usepackage{graphicx}%%插图宏包
+\usepackage[super,square]{natbib}%%参考文献引用格式调整
+\usepackage{listings}
+\usepackage{algorithm}
+\usepackage{float}%%固定图片位置，使用参数H
+
+%%并排放两张图片的包
+\usepackage{subfig}%多个子图
+\usepackage{caption}%注释设置
+
+
+
+\usepackage{algpseudocode}
+\lstset{language=Matlab}%代码语言使用的是matlab
+\lstset{breaklines}%自动将长的代码行换行排版
+\lstset{extendedchars=false}%解决代码跨页时，章节标题，页眉等汉字不显示的问题
+
+
+%colorlinks就是说超链接是否带颜色；
+%linkcolor就是目录，公式，图表等内部链接的颜色；
+%filecolor就是文件型链接的颜色；
+%urlcolor就是网页链接的颜色；
+%citecolor就是参考文献连接的颜色；
+\usepackage{hyperref}
+\hypersetup{hidelinks,
+	colorlinks=true,
+	allcolors=black,
+	pdfstartview=Fit,
+	breaklinks=true,
+	linkcolor=cyan,
+	filecolor=blue,      
+	urlcolor=red,
+	citecolor=green}
+
+% Windows系统使用
+%\usepackage{xeCJK}
+%\setCJKmainfont{SimSun}
+
+% Mac系统使用
+\usepackage{xeCJK}
+\setCJKmainfont[BoldFont=STHeiti,ItalicFont=STKaiti]{STSong}
+\setCJKsansfont[BoldFont=STHeiti]{STXihei}
+\setCJKmonofont{STFangsong}
+
+
+\title{\LaTeX 排版艺术}%%论文标题
+\author{quxk}
+
+%自定义时间
+%\date[06/13/17]{2017年6月13日} 
+
+%系统时间
+\date{\small \today \ \\ {\it}}
+
+%隐藏时间
+%\date{}
+
+%%以上都是导言区
+\begin{document}
+\maketitle %%生成标题等信息
+
+\begin{abstract}%% 摘要
+	好好学习，天天向上。	
+	\textbf{关键词:} study, up
+\end{abstract}
+
+\newpage %%另起一页
+\tableofcontents%%生成目录
+
+
+
+
+%% 插入数学公式
+\include{./Tex/formula}
+%% 插入图片
+\include{./Tex/image}
+%% 插入表格
+\include{./Tex/table}
+%% else
+\input{./Tex/else}
+
+
+
+
+\newpage
+%% 数学公式等
+有编号的公式
+\begin{align}\label{eq:1}
+\sqrt{a^2 + b^2} &= c^2,\\
+\sum_{n=1}^\infty \frac1{n^2}&=\frac{\pi^2}6.\label{eq:2}
+\end{align}
+
+
+
+
+
+
+
+
+
+
+\begin{thebibliography}{99}
+\bibitem{huang} PDF：黄新刚的\LaTeX Notes：生动有趣
+\bibitem{shu} 书籍：刘海洋《\LaTeX 入门》，胡伟《\LaTeX2$\varepsilon$》完全学习手册
+\end{thebibliography}
+
+\end{document}
